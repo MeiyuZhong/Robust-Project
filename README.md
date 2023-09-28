@@ -1,1 +1,2 @@
 # Robust-Project
+This it the official codebase for the paper: SPLITZ: CERTIFIABLE ROBUSTNESS VIA SPLIT LIPSCHITZ RANDOMIZED SMOOTHING.
