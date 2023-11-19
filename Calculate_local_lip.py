@@ -269,7 +269,7 @@ class net_Local_Lip(nn.Module):
             if i ==1:
                 self.in_size[i+1] = mu.size()
                 specnorms = self.local_linear()
-                r_tight = 1* max(0.2023, 0.1994, 0.2010) # for CIFAR-10 the variance [0.2023, 0.1994, 0.2010]; ImageNet the variance is [0.229, 0.224, 0.225], for MNIST, the variance is  [0.3081]
+                r_tight = 1* (1/max(0.2023, 0.1994, 0.2010)) # for CIFAR-10 the variance [0.2023, 0.1994, 0.2010]; ImageNet the variance is [0.229, 0.224, 0.225], for MNIST, the variance is  [0.3081]
                 for col in range(len(specnorms)):
                     r_tight *= specnorms[col]
                 return  u_list, self.u_data, r_tight.mean()
