@@ -29,3 +29,7 @@ def get_architecture(arch: str, dataset: str) -> torch.nn.Module:
         model = lenet().cuda()
     normalize_layer = get_normalize_layer(dataset)
     return torch.nn.Sequential(normalize_layer, model)
+
+## 1. remove the normalization layer: set mean of the datasets = 0, var = 1
+## 2. move the normalization layer after noise. f_L(x) + noise-mean(f_L(x)) / var( f_L(x) )
+## 3. incorporate normalization layer to the left half of the calssifier: 1/max(variance) * L_(f_l)
